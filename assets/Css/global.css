@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", "sans-serif";
+}
+
+body{
+    background-color: #EDF6F9;
+}
+
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    height: 80px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #FCFFFD;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo img{
+    height: 40px;
+    margin-right: 10px;
+}
+
+.tidin{
+    font-size: 25px;
+    font-weight: 500;
+    font-style: italic;
+    color: #006D77;
+}
+
+ul.menu{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+
+}
+
+.entrar{
+    font-weight: 550;
+}
+
+ul.menu li a{
+    text-decoration: none;
+    color: #5D737E;
+    transition: background-color 0.3s ease 0.2s;
+}
+
+ul.menu li a:hover {
+    color: #83C5BE;
+  }
