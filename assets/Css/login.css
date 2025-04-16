@@ -29,19 +29,22 @@
     font-weight: 400;
 }
 
-.create-account{
+.create-account {
     margin-left: 200px;
 }
 
-.create-account a{
-    text-decoration: none;
+
+.create-account-btn {
+    background: none;
+    border: none;
     font-size: 12px;
     color: #80BBB5;
     font-weight: 500;
-
-
+    cursor: pointer;
+    padding: 0;
 }
-.create-account a:hover{
+
+.create-account-btn:hover {
     text-decoration: underline;
 }
 

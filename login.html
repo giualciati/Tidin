@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/Css/global.css">
     <link rel="stylesheet" href="assets/Css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/Css/popup.css">
     <title>Login</title>
 </head>
+
 <body class="login-page">
 
     <div id="navbar-container"></div>
@@ -18,37 +21,68 @@
             .then(data => document.getElementById('navbar-container').innerHTML = data);
     </script>
 
-<div class="login-container">
-    <main class="login-text">
-    <form>
-        <div class="title-container">
-        <h2>Já tenho cadastro</h2>
-        <div class="create-account">
-        <a href="signUp.html">Criar uma conta</a>
-        </div>
-        </div>
-        <div class="input-box">
-        <input type="text" id="txtemail" name="txtemail" placeholder="Email">
-        <i class="fa-solid fa-user"></i>
-        <br><br>
+    <div class="login-container">
+        <main class="login-text">
+            <form>
+                <div class="title-container">
+                    <h2>Já tenho cadastro</h2>
+                    <div class="create-account">
+                        <button type="button" class="create-account-btn" onclick="abrirPopup()">Criar uma conta</button>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="txtemail" name="txtemail" placeholder="Email">
+                    <i class="fa-solid fa-user"></i>
+                    <br><br>
 
-        </div>
-        <div class="input-box">
-        <input type="password" id="txtsenha" name="txtsenha" placeholder="Senha" required>
-        <i class="fa-solid fa-lock"></i>
-        <br><br>
-        </div>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="txtsenha" name="txtsenha" placeholder="Senha" required>
+                    <i class="fa-solid fa-lock"></i>
+                    <br><br>
+                </div>
 
-        <div class="forgot-password">
-        <a href="#">Esqueci a senha</a>
-        </div>
-        <button type="button" onclick="Entrar()" id="signIn-button">Entrar</button>
-    </form>
-</main>
+                <div class="forgot-password">
+                    <a href="#">Esqueci a senha</a>
+                </div>
+                <button type="button" onclick="Entrar()" id="signIn-button">Entrar</button>
+            </form>
+            <div id="popupModal" class="modal">
+                <div class="modal-conteudo">
+                    <div class="modal-header">
+                        <h2>Como prefere criar sua conta?</h2>
+                        <span class="fechar" onclick="fecharPopup()">×</span>
+                    </div>
+                    <div class="opcao" onclick="selecionarConta('Cliente')">
+                        <div>
+                            <strong>Cliente</strong><br>
+                            <span>Quero contratar serviços para o meu lar</span>
+                        </div>
+                        <span>→</span>
+                    </div>
+                    <div class="opcao" onclick="selecionarConta('Profissional')">
+                        <div>
+                            <strong>Profissional</strong><br>
+                            <span>Quero oferecer meus serviços</span>
+                        </div>
+                        <span>→</span>
+                    </div>
+                    <div class="opcao" onclick="selecionarConta('Empresa')">
+                        <div>
+                            <strong>Empresa</strong><br>
+                            <span>Quero contratar serviços para empresa</span>
+                        </div>
+                        <span>→</span>
+                    </div>
+                </div>
+            </div>
+        </main>
 
-    
-</div>
 
-<script src="assets/JavaScript/script.js"></script>
+    </div>
+
+    <script src="assets/JavaScript/script.js"></script>
+    <script src="assets/JavaScript/popup.js"></script>
 </body>
+
 </html>
