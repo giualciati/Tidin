@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/Css/global.css">
+    <link rel="stylesheet" href="assets/Css/signUpProfessional.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <title>Cadastro de Profissionais</title>
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar-container').innerHTML = data);
+    </script>
+
+<div class="signUp-container">
+<main class="signUpProfessional">
+  <div class="signup-header">
+    <div class="title-signup">
+      <h2>Cadastro de conta profissional</h2>
+    </div>
+    <div class="tipo-conta-container">
+      <label class="switch">
+        <input type="checkbox" id="tipo-conta">
+        <span class="slider">
+          <span class="icon empresa">
+            <i class="fa-solid fa-user-tie"></i>
+          </span>
+          <span class="icon pessoal">
+            <i class="fa-solid fa-building"></i>
+          </span>
+        </span>
+      </label>
+    </div>
+  </div>
+    <div id="form-signUp-pf">
+    <form class="form-signUp">
+        <div class="input-group">
+        <div class="input-box">
+            <label for="txtnome-pf">Nome Completo</label>
+            <input type="text" id="txtnome-pf" placeholder="Nome Completo" required>
+            <br><br>
+        </div>
+        <div class="input-box">
+            <label for="CPF-pf">CPF</label>
+            <input type="text" id="CPF-pf" placeholder="CPF" required>
+            <br><br>
+        </div>
+        <div class="input-box">
+            <label for="txtemail-pf">E-mail</label>
+            <input type="text" id="txtemail-pf" placeholder="Email" required>
+            <br><br>
+        </div>
+        <div class="input-box">
+            <label for="telefone-pf">Telefone</label>
+            <input type="tel" id="telefone-pf" placeholder="(xx) xxxx-xxxx" required>
+            <br><br>
+        </div>
+        <div class="input-box">
+            <label for="dataNascimento-pf">Data de nascimento</label>
+            <input type="date" id="dataNascimento-pf" placeholder="Data de nascimento" required>
+            <br><br>
+        </div>
+        <div class="input-box">
+            <label for="cep-pf">CEP</label>
+            <input type="text" id="cep-pf" maxlength="9" onblur="buscarEnderecoPorCEP()" placeholder="CEP" required>
+            <br><br>
+        </div>
+        <div class="input-box">
+            <label for="endereco-pf">Endereço</label>
+            <input type="text" id="endereco-pf" readonly placeholder="Endereço">
+            <br><br>
+        </div>
+        <div class="input-box">
+            <label for="numeroEndereco-pf">Número</label>
+            <input type="number" id="numeroEndereco-pf"  placeholder="Número" required>
+            <br><br>
+        </div>
+        <div class="input-box">
+            <label for="senha-pf">Senha</label>
+            <input type="password" id="senha-pf" placeholder="Senha" required>
+            <br><br>
+        </div>
+        <div class="input-box">
+            <label for="confirmSenha-pf">Confirme sua senha</label>
+            <input type="password" id="confirmSenha-pf" placeholder="Senha">
+            <br><br>
+        </div>
+    </div>
+        <div class="g-recaptcha" data-sitekey="6Lf7XQorAAAAAKxMFPWqSdyW9o6yP-ZdPD_ZX9jb"></div>
+        <button type="submit" class="signUp-btn" onclick="validarSignUp()">Criar conta</button>
+    </form>
+</div>
+    <div id="form-signUp-pj" style="display: none;">
+        <form class="form-signUp">
+          <div class="input-group">
+            <div class="input-box">
+              <label for="razaoSocial-pj">Razão Social</label>
+              <input type="text" id="razaoSocial-pj" placeholder="Razão Social" required>
+              <br><br>
+            </div>
+            <div class="input-box">
+              <label for="cnpj-pj">CNPJ</label>
+              <input type="text" id="cnpj-pj" placeholder="CNPJ" required>
+              <br><br>
+            </div>
+            <div class="input-box">
+                <label for="nomeFantasia-pj">Nome Fantasia</label>
+                <input type="text" id="nomeFantasia-pj" placeholder="Nome Fantasia" required>
+                <br><br>
+              </div>
+              <div class="input-box">
+                <label for="endereco-pj">Endereço</label>
+                <input type="text" id="endereco-pj" readonly placeholder="Endereço">
+                <br><br>
+            </div>
+            <div class="input-box">
+                <label for="numeroEndereco-pj">Número</label>
+                <input type="number" id="numeroEndereco-pj"  placeholder="Número" required>
+                <br><br>
+            </div>
+            <div class="input-box">
+                <label for="txtemail-pj">E-mail</label>
+                <input type="text" id="txtemail-pj" placeholder="Email" required>
+                <br><br>
+            </div>
+            <div class="input-box">
+                <label for="telefone-pj">Telefone</label>
+                <input type="tel" id="telefone-pj" placeholder="(xx) xxxx-xxxx" required>
+                <br><br>
+            </div>
+          </div>
+          <br><br>
+          <div id="Representante">
+            <h2>Representante Legal</h2>  
+        <div class="input-box">
+            <label for="txtnome-pj">Nome Completo</label>
+            <input type="text" id="txtnome-pj" placeholder="Nome Completo" required>
+            <br><br>
+        </div>
+        <div class="input-box">
+            <label for="dataNascimento-pj">Data de nascimento</label>
+            <input type="date" id="dataNascimento-pj" placeholder="Data de nascimento" required>
+            <br><br>
+        </div>
+        <div class="input-box">
+            <label for="CPF-pj">CPF</label>
+            <input type="text" id="CPF-pj" placeholder="CPF" required>
+            <br><br>
+        </div>
+        <div class="input-box">
+          <label for="senha-pj">Senha</label>
+          <input type="password" id="senha-pj" placeholder="Senha" required>
+          <br><br>
+      </div>
+      <div class="input-box">
+          <label for="confirmSenha-pj">Confirme sua senha</label>
+          <input type="password" id="confirmSenha-pj" placeholder="Senha">
+          <br><br>
+      </div>
+    </div>
+
+          <div class="g-recaptcha" data-sitekey="6Lf7XQorAAAAAKxMFPWqSdyW9o6yP-ZdPD_ZX9jb"></div>
+          <button type="submit" class="signUp-btn" onclick="validarSignUp()">Criar conta</button>
+        </form>
+      </div>
+</main>
+</div> 
+
+<script src="assets/JavaScript/signUpProfessional.js"></script>
+<script src="assets/JavaScript/signUpClient.js"></script>
+</body>
+</html>

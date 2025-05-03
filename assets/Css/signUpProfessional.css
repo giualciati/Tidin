@@ -4,7 +4,7 @@
     align-items: center;
 }
 
-.signUp {
+.signUpProfessional {
     margin: 70px;
     max-width: 1300px;
     width: 90%;
@@ -14,7 +14,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-signUp{
+.form-signUp-pf{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -24,11 +24,22 @@
     padding: 3rem;
 }
 
-.signup-header{
+.form-signUp-pj{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 3rem;
+}
+
+.signup-header {
     margin-bottom: 3rem;
     display: flex;
     justify-content: space-between;
-    gap: 60rem;
+    align-items: center; 
+    gap: 2rem; 
 }
 
 .signup-header h2{
@@ -100,12 +111,15 @@
     color: #000000c0;
 }
 
+
 .input-box input::placeholder{
     color: #000000be;
 }
 
 .gender-group{
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
     margin: 0.62rem;
     padding: 0 0.5rem;
 }
@@ -122,6 +136,13 @@
     font-size: 0.81rem;
     font-weight: 600;
     color: #000000c0;
+}
+
+.g-recaptcha{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .signUp-btn {
@@ -145,6 +166,61 @@
     transform: scale(1.05); 
 }
 
-
-
-
+.tipo-conta-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    background-color: #C1C8CA;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 34px;
+    height: 100%;
+    width: 100%;
+    transition: background-color 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  
+  .icon {
+    font-size: 18px;
+    color: white;
+  }
+  
+  .slider::before {
+    content: "";
+    position: absolute;
+    height: 32px;
+    width: 32px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: transform 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #83C5BE;
+  }
+  
+  input:checked + .slider::before {
+    transform: translateX(40px);
+  }

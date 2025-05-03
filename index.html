@@ -5,27 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/Css/global.css">
     <link rel="stylesheet" href="assets/Css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Landing Page</title>
 </head>
 <body>
-    <div id="navbar-container"></div>
-
-    <script>
+    <div class="page-container">
+      <div id="navbar-container"></div>
+  
+      <script>
         fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('navbar-container').innerHTML = data);
-    </script>   
-
-    <section class="section1_lp">
-        <div class="title_lp">
-        <p>Conectamos <span class="highlight">você</span> aos melhores <br>
-        <span class="highlight">profissionais</span> para serviços de qualidade, <br>
-           praticidade e confiança, sem complicação.</p>
-       </div>
-       <div class="imgSection1">
-        <img src="">
-       </div>
-       
-    </section>
-</body>
+          .then(response => response.text())
+          .then(data => document.getElementById('navbar-container').innerHTML = data);
+      </script>
+  
+      <main class="main-content">
+        <section class="container-titlesection1">
+          <div class="left-column">
+            <div class="title_s1">
+              <p>
+                Conectamos <span class="highlight">você</span> aos melhores <br>
+                <span class="highlight">profissionais</span> para serviços de qualidade e 
+                praticidade, sem complicação.
+              </p>
+            </div>
+        
+            <ul class="benefits">
+              <li><i class="fa-solid fa-check"></i> Orçamento sem compromisso</li>
+              <li><i class="fa-solid fa-check"></i> Profissionais qualificados</li>
+              <li><i class="fa-solid fa-check"></i> Segurança garantida</li>
+            </ul>
+        
+            <button class="btn-primary">Contrate agora!</button>
+          </div>
+        
+          <div class="right-column">
+            <img src="assets/img/hero2.png" class="hero-img">
+          </div>
+        </section>
+      </main>
+  
+      <div id="footer-container"></div>
+  
+      <script>
+        fetch('footer.html')
+          .then(response => response.text())
+          .then(data => document.getElementById('footer-container').innerHTML = data);
+      </script>
+    </div>
+  </body>
 </html>
