@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/Css/global.css">
     <link rel="stylesheet" href="assets/Css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Landing Page</title>
 </head>
 <body>
@@ -19,27 +19,96 @@
       </script>
   
       <main class="main-content">
-        <section class="container-titlesection1">
+        <section class="section1">
           <div class="left-column">
             <div class="title_s1">
               <p>
                 Conectamos <span class="highlight">você</span> aos melhores <br>
                 <span class="highlight">profissionais</span> para serviços de qualidade e 
-                praticidade, sem complicação.
+                confiança, sem complicação.
               </p>
             </div>
-        
-            <ul class="benefits">
-              <li><i class="fa-solid fa-check"></i> Orçamento sem compromisso</li>
-              <li><i class="fa-solid fa-check"></i> Profissionais qualificados</li>
-              <li><i class="fa-solid fa-check"></i> Segurança garantida</li>
-            </ul>
         
             <button class="btn-primary">Contrate agora!</button>
           </div>
         
           <div class="right-column">
             <img src="assets/img/hero2.png" class="hero-img">
+          </div>
+        </section>
+        <div class="card-beneficios">
+          <ul class="benefits">
+            <li><span class="material-icons">attach_money</span>Orçamento sem compromisso</li>
+            <li><span class="material-icons">group</span>Profissionais qualificados</li>
+            <li><span class="material-icons">schedule</span>Suporte 24 horas</li>
+            <li><span class="material-icons">verified_user</span>Segurança garantida</li>
+          </ul>
+        </div>
+        <section class="section2">
+          <div class="switch-buttons">
+            <button class="active" onclick="showSection('home')">Para o seu lar</button>
+            <button onclick="showSection('business')">Para sua empresa</button>
+          </div>
+        
+          <div class="carousel-section active" id="home">
+            <button class="arrow left" onclick="scrollCarousel('home', -1)">&#10094;</button>
+            <div class="carousel-viewport">
+            <div class="carousel-wrapper">
+              <div class="card">
+              <img src="https://via.placeholder.com/200x120?text=Limpeza" alt="Limpeza">
+              <h3>Limpeza Padrão</h3>
+              <p>Seu imóvel limpo e pronto para mudança</p>
+              <button>Agendar serviço</button>
+              </div>
+            <div class="card">
+              <img src="assets/img/montagemmoveis.jpg" alt="Montagem">
+              <h3>Montagem de móveis</h3>
+              <p>Montadores qualificados para todo tipo de móvel</p>
+              <button>Agendar serviço</button>
+            </div>
+            <div class="card">
+              <img src="https://via.placeholder.com/200x120?text=Limpeza" alt="Limpeza">
+              <h3>Limpeza Pré-mudança</h3>
+              <p>Seu imóvel limpo e pronto para mudança</p>
+              <button>Agendar serviço</button>
+            </div>
+            <div class="card">
+              <img src="https://via.placeholder.com/200x120?text=Pós-obra" alt="Pós-obra">
+              <h3>Limpeza Pós-obra</h3>
+              <p>Especialistas em imóveis reformados</p>
+              <button>Agendar serviço</button>
+            </div>
+            <div class="card">
+              <img src="assets/img/ManutençãoCasa.jpg" alt="Assistência">
+              <h3>Assistência Residencial</h3>
+              <p>Eletricista, encanador, chaveiro e mais</p>
+              <button>Saiba mais</button>
+            </div>
+          </div>
+        </div>
+            <button class="arrow right" onclick="scrollCarousel('home', 1)">&#10095;</button>
+          </div>
+        
+          <!-- Seção Para sua empresa -->
+          <div class="carousel-section" id="business">
+            <div class="card">
+              <img src="https://via.placeholder.com/200x120?text=Escritório" alt="Escritório">
+              <h3>Limpeza de Escritórios</h3>
+              <p>Serviço contínuo e especializado</p>
+              <button>Agendar serviço</button>
+            </div>
+            <div class="card">
+              <img src="https://via.placeholder.com/200x120?text=Predial" alt="Predial">
+              <h3>Manutenção Predial</h3>
+              <p>Elétrica, hidráulica e mais</p>
+              <button>Solicitar orçamento</button>
+            </div>
+            <div class="card">
+              <img src="https://via.placeholder.com/200x120?text=Portaria" alt="Portaria">
+              <h3>Portaria Remota</h3>
+              <p>Segurança moderna para empresas</p>
+              <button>Saiba mais</button>
+            </div>
           </div>
         </section>
       </main>
@@ -51,6 +120,7 @@
           .then(response => response.text())
           .then(data => document.getElementById('footer-container').innerHTML = data);
       </script>
+      <script src="assets/JavaScript/carousel.js"></script>
     </div>
   </body>
 </html>
