@@ -1,126 +1,206 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/Css/global.css">
-    <link rel="stylesheet" href="assets/Css/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Landing Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/Css/global.css">
+  <link rel="stylesheet" href="assets/Css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Landing Page</title>
 </head>
+
 <body>
-    <div class="page-container">
-      <div id="navbar-container"></div>
-  
-      <script>
-        fetch('navbar.html')
-          .then(response => response.text())
-          .then(data => document.getElementById('navbar-container').innerHTML = data);
-      </script>
-  
-      <main class="main-content">
-        <section class="section1">
-          <div class="left-column">
-            <div class="title_s1">
-              <p>
-                Conectamos <span class="highlight">você</span> aos melhores <br>
-                <span class="highlight">profissionais</span> para serviços de qualidade e 
-                confiança, sem complicação.
-              </p>
-            </div>
-        
-            <button class="btn-primary">Contrate agora!</button>
+  <div class="page-container">
+    <div id="navbar-container"></div>
+
+    <script>
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('navbar-container').innerHTML = data);
+    </script>
+
+    <main class="main-content">
+      <section class="section1">
+        <div class="left-column">
+          <div class="title_s1">
+            <p>
+              Conectamos <span class="highlight">você</span> aos melhores <br>
+              <span class="highlight">profissionais</span> para serviços de qualidade e
+              confiança, sem complicação.
+            </p>
           </div>
-        
-          <div class="right-column">
-            <img src="assets/img/hero2.png" class="hero-img">
-          </div>
-        </section>
-        <div class="card-beneficios">
-          <ul class="benefits">
-            <li><span class="material-icons">attach_money</span>Orçamento sem compromisso</li>
-            <li><span class="material-icons">group</span>Profissionais qualificados</li>
-            <li><span class="material-icons">schedule</span>Suporte 24 horas</li>
-            <li><span class="material-icons">verified_user</span>Segurança garantida</li>
-          </ul>
+
+          <button class="btn-primary">Contrate agora!</button>
         </div>
-        <section class="section2">
-          <div class="switch-buttons">
-            <button class="active" onclick="showSection('home')">Para o seu lar</button>
-            <button onclick="showSection('business')">Para sua empresa</button>
-          </div>
-        
-          <div class="carousel-section active" id="home">
-            <button class="arrow left" onclick="scrollCarousel('home', -1)">&#10094;</button>
-            <div class="carousel-viewport">
-            <div class="carousel-wrapper">
-              <div class="card">
-              <img src="https://via.placeholder.com/200x120?text=Limpeza" alt="Limpeza">
-              <h3>Limpeza Padrão</h3>
-              <p>Seu imóvel limpo e pronto para mudança</p>
-              <button>Agendar serviço</button>
-              </div>
-            <div class="card">
-              <img src="assets/img/montagemmoveis.jpg" alt="Montagem">
-              <h3>Montagem de móveis</h3>
-              <p>Montadores qualificados para todo tipo de móvel</p>
-              <button>Agendar serviço</button>
-            </div>
-            <div class="card">
-              <img src="https://via.placeholder.com/200x120?text=Limpeza" alt="Limpeza">
-              <h3>Limpeza Pré-mudança</h3>
-              <p>Seu imóvel limpo e pronto para mudança</p>
-              <button>Agendar serviço</button>
-            </div>
-            <div class="card">
-              <img src="https://via.placeholder.com/200x120?text=Pós-obra" alt="Pós-obra">
-              <h3>Limpeza Pós-obra</h3>
-              <p>Especialistas em imóveis reformados</p>
-              <button>Agendar serviço</button>
-            </div>
-            <div class="card">
-              <img src="assets/img/ManutençãoCasa.jpg" alt="Assistência">
-              <h3>Assistência Residencial</h3>
-              <p>Eletricista, encanador, chaveiro e mais</p>
-              <button>Saiba mais</button>
+
+        <div class="right-column">
+          <img src="assets/img/hero2.png" class="hero-img">
+        </div>
+      </section>
+      <div class="card-beneficios">
+        <ul class="benefits">
+          <li><span class="material-icons">attach_money</span>Orçamento sem compromisso</li>
+          <li><span class="material-icons">group</span>Profissionais qualificados</li>
+          <li><span class="material-icons">schedule</span>Suporte 24 horas</li>
+          <li><span class="material-icons">verified_user</span>Segurança garantida</li>
+        </ul>
+      </div>
+      <section class="section2">
+        <div class="switch-buttons">
+          <button class="active" onclick="showSection('home')">Para o seu lar</button>
+          <button onclick="showSection('business')">Para sua empresa</button>
+        </div>
+        <div id="home" class="slider-section active">
+          <div class="container swiper">
+            <div class="card-wrapper">
+              <ul class="card-list swiper-wrapper">
+                <li class="card-item swiper-slide">
+                  <a href="#" class="card-link">
+                    <img src="assets/img/LimpezaPadrao.jpg" alt="image" class="card-image">
+                    <h2 class="title">Limpeza Padrão</h2>
+                    <p class="card-details">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button class="card-button">Contrate</button>
+                  </a>
+                </li>
+                <li class="card-item swiper-slide">
+                  <a href="#" class="card-link">
+                    <img src="img/LimpezaPadrao.jpg" alt="image" class="card-image">
+                    <h2 class="title">Limpeza pós-obra</h2>
+                    <p class="card-details">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button class="card-button">Contrate</button>
+                  </a>
+                </li>
+                <li class="card-item swiper-slide">
+                  <a href="#" class="card-link">
+                    <img src="img/LimpezaPadrao.jpg" alt="image" class="card-image">
+                    <h2 class="title">Limpeza pré-mudança</h2>
+                    <p class="card-details">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button class="card-button">Contrate</button>
+                  </a>
+                </li>
+                <li class="card-item swiper-slide">
+                  <a href="#" class="card-link">
+                    <img src="img/LimpezaPadrao.jpg" alt="image" class="card-image">
+                    <h2 class="title">Montagem de móveis</h2>
+                    <p class="card-details">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button class="card-button">Contrate</button>
+                  </a>
+                </li>
+                <li class="card-item swiper-slide">
+                  <a href="#" class="card-link">
+                    <img src="img/LimpezaPadrao.jpg" alt="image" class="card-image">
+                    <h2 class="title">Montagem de móveis</h2>
+                    <p class="card-details">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button class="card-button">Contrate</button>
+                  </a>
+                </li>
+                <li class="card-item swiper-slide">
+                  <a href="#" class="card-link">
+                    <img src="img/LimpezaPadrao.jpg" alt="image" class="card-image">
+                    <h2 class="title">Montagem de móveis</h2>
+                    <p class="card-details">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button class="card-button">Contrate</button>
+                  </a>
+                </li>
+                <li class="card-item swiper-slide">
+                  <a href="#" class="card-link">
+                    <img src="img/LimpezaPadrao.jpg" alt="image" class="card-image">
+                    <h2 class="title">Montagem de móveis</h2>
+                    <p class="card-details">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button class="card-button">Contrate</button>
+                  </a>
+                </li>
+              </ul>
+
+              <div class="swiper-pagination"></div>
+              <div class="swiper-slide-button swiper-button-prev"></div>
+              <div class="swiper-slide-button swiper-button-next"></div>
             </div>
           </div>
         </div>
-            <button class="arrow right" onclick="scrollCarousel('home', 1)">&#10095;</button>
+        <div id="business" class="slider-section">
+          <div class="container swiper">
+            <div class="card-wrapper">
+              <ul class="card-list swiper-wrapper">
+                <li class="card-item swiper-slide">
+                  <a href="#" class="card-link">
+                    <img src="img/LimpezaPadrao.jpg" alt="image" class="card-image">
+                    <h2 class="title">Limpeza Padrãooo</h2>
+                    <p class="card-details">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button class="card-button">Contrate</button>
+                  </a>
+                </li>
+                <li class="card-item swiper-slide">
+                  <a href="#" class="card-link">
+                    <img src="img/LimpezaPadrao.jpg" alt="image" class="card-image">
+                    <h2 class="title">Limpeza pós-obra</h2>
+                    <p class="card-details">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button class="card-button">Contrate</button>
+                  </a>
+                </li>
+                <li class="card-item swiper-slide">
+                  <a href="#" class="card-link">
+                    <img src="img/LimpezaPadrao.jpg" alt="image" class="card-image">
+                    <h2 class="title">Limpeza pré-mudança</h2>
+                    <p class="card-details">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button class="card-button">Contrate</button>
+                  </a>
+                </li>
+                <li class="card-item swiper-slide">
+                  <a href="#" class="card-link">
+                    <img src="img/LimpezaPadrao.jpg" alt="image" class="card-image">
+                    <h2 class="title">Montagem de móveis</h2>
+                    <p class="card-details">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button class="card-button">Contrate</button>
+                  </a>
+                </li>
+                <li class="card-item swiper-slide">
+                  <a href="#" class="card-link">
+                    <img src="img/LimpezaPadrao.jpg" alt="image" class="card-image">
+                    <h2 class="title">Montagem de móveis</h2>
+                    <p class="card-details">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button class="card-button">Contrate</button>
+                  </a>
+                </li>
+                <li class="card-item swiper-slide">
+                  <a href="#" class="card-link">
+                    <img src="img/LimpezaPadrao.jpg" alt="image" class="card-image">
+                    <h2 class="title">Montagem de móveis</h2>
+                    <p class="card-details">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button class="card-button">Contrate</button>
+                  </a>
+                </li>
+                <li class="card-item swiper-slide">
+                  <a href="#" class="card-link">
+                    <img src="img/LimpezaPadrao.jpg" alt="image" class="card-image">
+                    <h2 class="title">Montagem de móveis</h2>
+                    <p class="card-details">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <button class="card-button">Contrate</button>
+                  </a>
+                </li>
+              </ul>
+
+              <div class="swiper-pagination"></div>
+              <div class="swiper-slide-button swiper-button-prev"></div>
+              <div class="swiper-slide-button swiper-button-next"></div>
+            </div>
           </div>
-        
-          <!-- Seção Para sua empresa -->
-          <div class="carousel-section" id="business">
-            <div class="card">
-              <img src="https://via.placeholder.com/200x120?text=Escritório" alt="Escritório">
-              <h3>Limpeza de Escritórios</h3>
-              <p>Serviço contínuo e especializado</p>
-              <button>Agendar serviço</button>
-            </div>
-            <div class="card">
-              <img src="https://via.placeholder.com/200x120?text=Predial" alt="Predial">
-              <h3>Manutenção Predial</h3>
-              <p>Elétrica, hidráulica e mais</p>
-              <button>Solicitar orçamento</button>
-            </div>
-            <div class="card">
-              <img src="https://via.placeholder.com/200x120?text=Portaria" alt="Portaria">
-              <h3>Portaria Remota</h3>
-              <p>Segurança moderna para empresas</p>
-              <button>Saiba mais</button>
-            </div>
-          </div>
-        </section>
-      </main>
-  
-      <div id="footer-container"></div>
-  
-      <script>
-        fetch('footer.html')
-          .then(response => response.text())
-          .then(data => document.getElementById('footer-container').innerHTML = data);
-      </script>
-      <script src="assets/JavaScript/carousel.js"></script>
-    </div>
-  </body>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer-container').innerHTML = data);
+    </script>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="assets/JavaScript/slider.js"></script>
+</body>
+
 </html>

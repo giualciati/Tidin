@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/Css/global.css">
+    <link rel="stylesheet" href="assets/Css/style.css">
+    <link rel="stylesheet" href="assets/Css/FAQs.css">
+    <title>Perguntas Frequentes</title>
+</head>
+<body>
+    <div class="page-container">
+        <div id="navbar-container"></div>
+      
+          <script>
+            fetch('navbar.html')
+              .then(response => response.text())
+              .then(data => document.getElementById('navbar-container').innerHTML = data);
+          </script>
+    
+        <main class="faqs-container">
+            <section class="faq-section">
+                <h2>Perguntas Frequentes</h2>
+                <p>Ficou alguma dúvida sobre como funciona a Tidin?</p>
+                <p>A gente te responde tudo!</p>
+                <div class="faq-container" id="faq-container">
+                </div>
+              </section>
+            </main>
+            <div id="footer-container"></div>
+          <script>
+            fetch('footer.html')
+              .then(response => response.text())
+              .then(data => document.getElementById('footer-container').innerHTML = data);
+          </script>
+        </div>
+<script src="assets/JavaScript/FAQs.js"></script>
+</body>
+</html>
