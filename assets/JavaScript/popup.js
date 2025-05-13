@@ -10,7 +10,7 @@ function abrirPopup() {
     if (tipo === "Cliente") {
       window.location.href = "signUpClient.html";
     } else if (tipo === "Profissional") {
-      window.location.href = "cadastro-profissional.html";
+      window.location.href = "signUpProfessional.html";
     } else if (tipo === "Empresa") {
       window.location.href = "cadastro-empresa.html";
     }
