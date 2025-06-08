@@ -216,6 +216,28 @@
     transition: transform 0.4s;
     border-radius: 50%;
   }
+
+  .input-box select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: Poppins, sans-serif;
+  background-color: #fff;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg fill="%23999" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 10px);
+  background-position-y: center;
+  cursor: pointer;
+}
+
+.input-box select:focus {
+  outline: none;
+  border-color: #4A90E2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.3);
+}
   
   input:checked + .slider {
     background-color: #83C5BE;

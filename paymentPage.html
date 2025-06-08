@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/Css/paymentPage.css">
+  <link rel="stylesheet" href="assets/Css/global.css">
+  <title>Pagamento do Serviço</title>
+  <style>
+  </style>
+</head>
+<body>
+
+  <div id="navbar-container"></div>
+
+    <script>
+      fetch('navbar.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('navbar-container').innerHTML = data;
+    atualizarNavUsuario(); 
+  });
+    </script>
+  <h2 class="title-pay">Resumo do Serviço</h2>
+  <div class="resumo" id="resumoServico">
+    Carregando informações do serviço...
+  </div>
+
+  <h3 class="title-pay">Forma de Pagamento</h3>
+  <label><input type="radio" name="pagamento" value="cartao" /> Cartão</label>
+  <label><input type="radio" name="pagamento" value="pix" /> Pix</label>
+  <label><input type="radio" name="pagamento" value="dinheiro" /> Dinheiro</label>
+
+  <button class="pay" onclick="processarPagamento()">Confirmar Pagamento</button>
+
+  <div id="modalCartao" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="fecharModal('modalCartao')">&times;</button>
+      <h3>Pagamento com Cartão</h3>
+      <label>Nome no Cartão</label>
+      <input type="text" placeholder="Seu nome completo" />
+      <label>Número do Cartão</label>
+      <input type="text" placeholder="0000 0000 0000 0000" />
+      <label>Validade</label>
+      <input type="text" placeholder="MM/AA" />
+      <label>CVV</label>
+      <input type="text" placeholder="123" />
+    </div>
+  </div>
+
+ 
+  <div id="modalPix" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="fecharModal('modalPix')">&times;</button>
+      <h3>Pagamento Pix</h3>
+      <p>Escaneie o QR Code abaixo:</p>
+      <img src="assets/img/qr-code.png" alt="QR Code Pix" />
+      <p>ou copie o código:</p>
+      <p>00020126580014BR.GOV.BCB.PIX0136612345678905204000053039865802BR5920Tidin6009SaoPaulo62070503***6304ABCD</p>
+    </div>
+  </div>
+
+  <script>
+   
+    const resumoDiv = document.getElementById('resumoServico');
+    const dados = JSON.parse(localStorage.getItem('dadosServico')) || {};
+    if (Object.keys(dados).length) {
+  resumoDiv.innerHTML = `
+   <strong>Serviço:</strong> ${dados.servico}<br>
+  <strong>Quartos:</strong> ${dados.qtdQuartos}<br>
+  <strong>Banheiros:</strong> ${dados.qtdBanheiros}<br>
+  <strong>Tamanho:</strong> ${dados.metrosQuadrados} m²<br>
+  <strong>Data:</strong> ${dados.data || "Não informada"}<br>
+  <strong>Preço final:</strong> R$ ${dados.precoFinal.toFixed(2)}
+  `;
+} else {
+  resumoDiv.textContent = "Nenhum dado encontrado.";
+}
+
+    function processarPagamento() {
+      const forma = document.querySelector('input[name="pagamento"]:checked');
+      if (!forma) {
+        alert("Escolha uma forma de pagamento.");
+        return;
+      }
+
+      if (forma.value === "cartao") {
+        abrirModal("modalCartao");
+      } else if (forma.value === "pix") {
+        abrirModal("modalPix");
+      } else {
+        alert("Pagamento em dinheiro será feito na hora do serviço.");
+         window.location.href = "clientDashboard.html";
+      }
+    }
+
+    function abrirModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+
+    function fecharModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+  </script>
+</body>
+</html>

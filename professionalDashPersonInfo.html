@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/Css/admDashboard.css" />
+  <link rel="stylesheet" href="assets/Css/clientDashboard.css" />
+  <link rel="stylesheet" href="assets/Css/clientPersonalInformation.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <title>Meus Dados (Profissional)</title>
+</head>
+
+<body>
+  <nav class="sidebar close">
+    <header>
+      <a href="index.html">
+        <div class="logo">
+          <span class="img">
+            <img src="assets/img/logo.png" alt="logo" />
+          </span>
+          <div class="text logo-text">
+            <span class="logo-name">tidin</span>
+          </div>
+        </div>
+      </a>
+      <span class="material-icons-outlined">chevron_right</span>
+    </header>
+    <div class="menu-bar">
+      <div class="menu">
+        <ul class="menu-links">
+          <li class="nav-link">
+            <a href="professionalDashboard.html">
+              <span class="material-icons-outlined">home</span>
+              <span class="text nav-text">Início</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="professionalDashMessages.html">
+              <span class="material-icons-outlined">mail</span>
+              <span class="text nav-text">Mensagens</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="professionalDashHistory.html">
+              <span class="material-icons-outlined">inventory</span>
+              <span class="text nav-text">Serviços</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="professionalDashPersonInfo.html">
+              <span class="material-icons-outlined">person</span>
+              <span class="text nav-text">Meu Perfil</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="bottom-content">
+        <li class="bottom-icon">
+          <a href="#" onclick="logout()">
+            <span class="material-icons-outlined">logout</span>
+            <span class="text nav-text">Sair</span>
+          </a>
+        </li>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <nav class="nav-section-client">
+      <div class="profile">
+        <div class="info">
+          <p>Olá, <b></b></p>
+          <small class="text-muted">Profissional</small>
+        </div>
+        <div class="profile-photo">
+          <img src="assets/img/images.png" alt="profile" />
+        </div>
+      </div>
+    </nav>
+
+    <section>
+      <h2>Meus Dados</h2>
+      <form id="formMeusDados">
+        <label for="txtnome">Nome Completo</label>
+        <input type="text" id="txtnome" required />
+
+        <label for="cpf">CPF ou CNPJ</label>
+        <input type="text" id="cpf" required />
+
+        <label for="txtemail">E-mail</label>
+        <input type="email" id="txtemail" disabled />
+
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" required />
+
+        <label for="dataNascimento">Data de nascimento</label>
+        <input type="date" id="dataNascimento" required />
+
+        <label for="cep">CEP</label>
+        <input type="text" id="cep" maxlength="9" onblur="buscarEnderecoPorCEP()" required />
+
+        <label for="endereco">Endereço</label>
+        <input type="text" id="endereco" readonly />
+
+        <label for="numeroEndereco">Número</label>
+        <input type="number" id="numeroEndereco" required />
+
+        <label for="senha">Nova senha</label>
+        <input type="password" id="senha" placeholder="Deixe em branco para manter a senha atual" />
+
+        <label for="confirmSenha">Confirmar nova senha</label>
+        <input type="password" id="confirmSenha" placeholder="Confirme a nova senha" />
+
+        <button type="submit" class="save-btn">Salvar Alterações</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="assets/JavaScript/sidebar.js"></script>
+  <script src="assets/JavaScript/professionalDashboard.js"></script>
+  <script src="assets/JavaScript/clientDashboard.js"></script>
+</body>
+
+</html>

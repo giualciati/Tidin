@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat Suporte Tidin</title>
+  <link rel="stylesheet" href="assets/Css/supportChat.css" />
+</head>
+<body>
+  <div id="chatWidget">
+    <div class="chat-header" id="chatHeaderToggle">
+      <span>💬 Suporte Tidin</span>
+      <span id="chatToggle">−</span>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <form id="formularioInicial">
+        <p>Olá! Preencha os dados para iniciar o atendimento:</p>
+        <input type="text" id="nomeUsuario" placeholder="Seu nome" required />
+        <input type="email" id="emailUsuario" placeholder="Seu e-mail" required />
+        <select id="tipoUsuario" required>
+          <option value="">Você é...</option>
+          <option value="cliente">Cliente</option>
+          <option value="prestador">Prestador</option>
+        </select>
+        <button type="submit">Iniciar o chat</button>
+      </form>
+      <div id="chatConversa" style="display:none; flex-direction: column; height: 100%;">
+        <div id="mensagensChat" style="flex-grow: 1; overflow-y: auto; margin-bottom: 10px;"></div>
+        <div class="chat-input">
+          <input type="text" id="inputMensagem" placeholder="Digite sua mensagem..." />
+          <button id="btnEnviarMensagem" type="button">➤</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="assets/JavaScript/chat.js"></script>
+</body>
+</html>

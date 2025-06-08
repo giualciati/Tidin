@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/Css/admDashboard.css" />
+  <link rel="stylesheet" href="assets/Css/clientHistory.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <title>Histórico do Profissional</title>
+</head>
+
+<body>
+  <nav class="sidebar close">
+    <header>
+      <a href="index.html">
+        <div class="logo">
+          <span class="img">
+            <img src="assets/img/logo.png" alt="logo" />
+          </span>
+          <div class="text logo-text">
+            <span class="logo-name">tidin</span>
+          </div>
+        </div>
+      </a>
+      <span class="material-icons-outlined">chevron_right</span>
+    </header>
+    <div class="menu-bar">
+      <div class="menu">
+        <ul class="menu-links">
+          <li class="nav-link">
+            <a href="professionalDashboard.html">
+              <span class="material-icons-outlined">home</span>
+              <span class="text nav-text">Início</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="professionalDashMessages.html">
+              <span class="material-icons-outlined">mail</span>
+              <span class="text nav-text">Mensagens</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="professionalDashHistory.html">
+              <span class="material-icons-outlined">inventory</span>
+              <span class="text nav-text">Serviços Prestados</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="professionalDashPersonInfo.html">
+              <span class="material-icons-outlined">person</span>
+              <span class="text nav-text">Meu Perfil</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="bottom-content">
+        <li class="bottom-icon">
+          <a href="#" onclick="logout()">
+            <span class="material-icons-outlined">logout</span>
+            <span class="text nav-text">Sair</span>
+          </a>
+        </li>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <nav class="nav-section-client">
+      <div class="profile">
+        <div class="info">
+          <p>Olá, <b></b></p>
+          <small class="text-muted">Profissional</small>
+        </div>
+        <div class="profile-photo">
+          <img src="assets/img/images.png" alt="profile" />
+        </div>
+      </div>
+    </nav>
+
+    <div class="home-content">
+      <section class="recent-orders">
+        <div class="recent-orders-card">
+          <h2>Histórico de serviços prestados</h2>
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>Cliente</th>
+                <th>Serviço</th>
+                <th>Endereço</th>
+                <th>Data</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="history-body">
+              
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="assets/JavaScript/sidebar.js"></script>
+  <script src="assets/JavaScript/professionalDashboard.js"></script>
+  <script src="assets/JavaScript/clientDashboard.js"></script>
+</body>
+
+</html>

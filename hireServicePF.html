@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Limpeza</title>
+    <link rel="stylesheet" href="assets/Css/global.css">
+    <link rel="stylesheet" href="assets/Css/hireService.css">
+</head>
+<body>
+  <script>
+  const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+  if (!usuarioLogado) {
+    alert("Você precisa estar logado para acessar esta página.");
+    window.location.href = "login.html";
+  }
+</script>
+
+    <div id="navbar-container"></div>
+
+    <script>
+      fetch('navbar.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('navbar-container').innerHTML = data;
+    atualizarNavUsuario(); 
+  });
+    </script>
+
+    <main class="form-container">
+    <div class="container">
+  <div class="formulario">
+    <h2>Dados do Serviço</h2>
+
+    <label for="servico">Tipo de serviço:</label>
+    <select id="servico">
+      <optgroup label="Para residências">
+                <option value="Assistência Residencial">Assistência Residencial</option>
+                 <option value="Limpeza de estofados">Limpeza de estofados</option>
+                 <option value="Limpeza de piscina">Limpeza de piscina</option>
+                 <option value="Limpeza de vidros">Limpeza de vidros</option>
+                <option value="Limpeza Padrão">Limpeza Padrão</option>
+                <option value="Limpeza Pesada">Limpeza Pesada</option>
+                <option value="Montagem de móveis">Montagem de móveis</option>
+               <option value="Passadoria">Passadoria</option>
+              </optgroup>
+              <optgroup label="Para empresas">
+                <option value="Assistência Empresarial">Assistência Empresarial</option>
+                <option value="Limpeza Comercial">Limpeza Comercial</option>
+              </optgroup>
+    </select>
+
+   <div class="quantidade-comodos">
+  <div class="comodo">
+    <button class="btn-circulo" onclick="alterarQuantidade('quartos', -1)">−</button>
+    <span><strong id="qtdQuartos">2</strong> quartos</span>
+    <button class="btn-circulo" onclick="alterarQuantidade('quartos', 1)">+</button>
+  </div>
+
+  <div class="comodo">
+    <button class="btn-circulo" onclick="alterarQuantidade('banheiros', -1)">−</button>
+    <span><strong id="qtdBanheiros">2</strong> banheiros</span>
+    <button class="btn-circulo" onclick="alterarQuantidade('banheiros', 1)">+</button>
+  </div>
+</div>
+
+<div class="comodos-info">
+  <span class="info-check">✔ Cozinha e sala já estão inclusos</span><br>
+  <small>Para lavabo, adicione banheiros. Para demais cômodos, adicione mais quartos.</small>
+</div><br>
+<label>Tipo de imóvel:</label>
+<div class="radio-group" id="tipoImovelGroup">
+  <div class="radio-option" data-value="Apartamento">Apartamento</div>
+  <div class="radio-option" data-value="Casa">Casa</div>
+  <div class="radio-option" data-value="Empresa">Empresa</div>
+</div>
+
+<div id="campoMetros" style="display: none; margin-top: 10px;">
+  <label for="metrosQuadrados">Área a ser limpa (m²):</label>
+  <input type="number" id="metrosQuadrados" placeholder="Ex: 150" min="10" />
+</div>
+
+<label for="dataServico">Data desejada:</label>
+<input type="date" id="dataServico" required><br><br>
+
+    <label>
+      <input type="checkbox" id="levarProdutos" />
+      Deseja que o profissional leve produtos ou ferramentas?
+    </label>
+    
+    <label for="infoAdicionais" style="margin-top: 15px; display: block;">Informações adicionais para o profissional:</label>
+<textarea id="infoAdicionais" rows="4" placeholder="Digite aqui alguma informação que deseja deixar para o profissional..." style="width: 100%; resize: vertical;"></textarea>
+
+  </div>
+
+  <div class="resumo-container" id="resumoContainer">
+    <h3>Resumo do Serviço</h3>
+    <p id="descricaoServico">Preencha os dados para ver o resumo.</p>
+    <p class="preco-total" id="precoFinal">R$ 0,00</p>
+    <button id="btnConcluir">Ir para pagamento</button>
+  </div>
+</div>
+  </main>
+  
+    <div id="footer-container"></div>
+
+    <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer-container').innerHTML = data);
+    </script>
+  </div>
+
+<script src="assets/JavaScript/hireServicePF.js"></script>
+<script src="assets/JavaScript/utils.js"></script>
+<script src="assets/JavaScript/script.js"></script>
+    
+</body>
+</html>
