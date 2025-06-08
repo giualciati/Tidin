@@ -1,8 +1,8 @@
 
 #chatWidget {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 50px;
+  right: 10px;
   max-width: 350px;
   width: 100%;
   border-radius: 12px;
