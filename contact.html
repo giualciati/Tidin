@@ -10,13 +10,16 @@
 </head>
 <body>
     <div class="page-container">
-        <div id="navbar-container"></div>
-    
-        <script>
-          fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('navbar-container').innerHTML = data);
-        </script>
+         <div id="navbar-container"></div>
+
+    <script>
+      fetch('navbar.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('navbar-container').innerHTML = data;
+    atualizarNavUsuario(); 
+  });
+    </script>
     <main class="contato-container">
         <section class="contato-hero">
           <div class="contato-hero-content">
@@ -133,5 +136,6 @@
       </script>
     </div>
     <script src="assets/JavaScript/contact.js"></script>
+    <script src="assets/JavaScript/script.js"></script>
 </body>
 </html>

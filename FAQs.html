@@ -9,22 +9,25 @@
 </head>
 <body>
     <div class="page-container">
-        <div id="navbar-container"></div>
-      
-          <script>
-            fetch('navbar.html')
-              .then(response => response.text())
-              .then(data => document.getElementById('navbar-container').innerHTML = data);
-          </script>
-    
+    <div id="navbar-container"></div>
+
+    <script>
+      fetch('navbar.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('navbar-container').innerHTML = data;
+    atualizarNavUsuario(); 
+  });
+    </script>
         <main class="faqs-container">
-            <section class="faq-section">
+            <section class="faq-hero">
+              <div class="faq-hero-content">
                 <h2>Perguntas Frequentes</h2>
                 <p>Ficou alguma dúvida sobre como funciona a Tidin?</p>
                 <p>A gente te responde tudo!</p>
+              </div>
+            </section>
                 <div class="faq-container" id="faq-container">
-                </div>
-              </section>
             </main>
             <div id="footer-container"></div>
           <script>
@@ -34,5 +37,6 @@
           </script>
         </div>
 <script src="assets/JavaScript/FAQs.js"></script>
+<script src="assets/JavaScript/script.js"></script>
 </body>
 </html>
