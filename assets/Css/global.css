@@ -176,18 +176,6 @@ ul.menu li a:hover {
   z-index: 9999;
 }
 
-.btn-logout {
-  background-color: #d9534f;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn-logout:hover {
-  background-color: #c9302c;
-}
 
 .cookie-modal {
   position: fixed;
@@ -198,7 +186,7 @@ ul.menu li a:hover {
   border-radius: 8px;
   padding: 16px 24px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  z-index: 9999;
   max-width: 90%;
   width: 90%;
   font-size: 14px;
