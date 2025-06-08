@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/Css/admDashboard.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <title>ADM - Serviços</title>
+</head>
+
+<body>
+    <nav class="sidebar close">
+        <header>
+            <a href="index.html">
+            <div class="logo">
+                <span class="img">
+                    <img src="assets/img/logo.png" alt="logo" />
+                </span>
+                <div class="text logo-text">
+                    <span class="logo-name">tidin</span>
+                </div>
+            </div>
+            </a>
+            <span class="material-icons-outlined">chevron_right</span>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="admDashboard.html">
+                            <span class="material-icons-outlined">home</span>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="admDashClient.html">
+                            <span class="material-icons-outlined">person</span>
+                            <span class="text nav-text">Clientes</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="admDashProf.html">
+                            <span class="material-icons-outlined">group</span>
+                            <span class="text nav-text">Prestadores</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="admDashMessages.html">
+                            <span class="material-icons-outlined">mail</span>
+                            <span class="text nav-text">Mensagens</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="admDashServices.html">
+                            <span class="material-icons-outlined">inventory</span>
+                            <span class="text nav-text">Serviços</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li class="bottom-icon">
+                    <a href="index.html">
+                        <span class="material-icons-outlined">logout</span>
+                        <span class="text nav-text">Sair</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="main-content">
+        <nav class="nav-section">
+            <span class="dashboard">Serviços</span>
+            <div class="search-box">
+                <input type="text" placeholder="Pesquisar serviços..." />
+                <span class="material-icons-outlined">search</span>
+            </div>
+            <div class="profile">
+                <div class="info">
+                    <p>Olá, <b>Giulia</b></p>
+                    <small class="text-muted">Admin</small>
+                </div>
+                <div class="profile-photo">
+                    <img src="assets/img/images.png" alt="profile" />
+                </div>
+            </div>
+        </nav>
+
+        <div class="top-bar">
+            <input type="text" placeholder="Filtrar por nome ou categoria..." />
+            <button onclick="openAddServiceModal()">+ Adicionar Serviço</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Serviço</th>
+                    <th>Categoria</th>
+                    <th>Valor/hora</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Limpeza Residencial</td>
+                    <td>Limpeza</td>
+                    <td>R$ 120,00</td>
+                    <td>Ativo</td>
+                    <td>
+                        <button class="btn-acoes">Editar</button>
+                        <button class="btn-acoes">Excluir</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Passadoria</td>
+                    <td>Lavanderia</td>
+                    <td>R$ 80,00</td>
+                    <td>Inativo</td>
+                    <td>
+                        <button class="btn-acoes">Editar</button>
+                        <button class="btn-acoes">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <div id="modalServico" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Adicionar Serviço</h2>
+            <form id="formServico">
+                <label for="nomeServico">Nome do Serviço</label>
+                <input type="text" id="nomeServico" required />
+
+                <label>Categoria</label>
+                <select id="categoriaServico" required>
+                    <option value="Para residências">Para residências</option>
+                    <option value="Para empresas">Para empresas</option>
+                </select>
+
+                <label for="valorServico">Valor por hora (R$)</label>
+                <input type="number" id="valorServico" step="0.01" required />
+
+                <label for="statusServico">Status</label>
+                <select id="statusServico">
+                    <option value="Ativo">Ativo</option>
+                    <option value="Inativo">Inativo</option>
+                </select>
+
+                <button type="submit" class="btn-salvar">Salvar</button>
+                <input type="hidden" id="indiceServico" />
+            </form>
+        </div>
+    </div>
+    <script src="assets/JavaScript/admDashServices.js"></script>
+    <script src="assets/JavaScript/sidebar.js"></script>
+</body>
+
+</html>

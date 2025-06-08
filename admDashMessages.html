@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mensagens - Suporte</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="assets/Css/admDashboard.css">
+  <link rel="stylesheet" href="assets/Css/chat.css">
+</head>
+
+<body>
+   <nav class="sidebar close">
+        <header>
+            <a href="index.html">
+            <div class="logo">
+                <span class="img">
+                    <img src="assets/img/logo.png" alt="logo">
+                </span>
+                <div class=" text logo-text">
+                    <span class="logo-name">tidin</span>
+                </div>
+            </div>
+            </a>
+            <span  class="material-icons-outlined">
+                chevron_right
+            </span>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="admDashboard.html">
+                            <span class="material-icons-outlined">home</span>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="admDashClient.html">
+                            <span class="material-icons-outlined">person</span>
+                            <span class="text nav-text">Clientes</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="admDashProf.html">
+                            <span class="material-icons-outlined">group</span>
+                            <span class="text nav-text">Prestadores</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="admDashMessages.html">
+                            <span class="material-icons-outlined">mail</span>
+                            <span class="text nav-text">Mensagens</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="admDashServices.html">
+                            <span class="material-icons-outlined">inventory</span>
+                            <span class="text nav-text">Serviços</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li class="bottom-icon">
+                    <a href="index.html">
+                        <span class="material-icons-outlined">logout</span>
+                        <span class=" text nav-text">Sair</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </nav>
+  <main class="main-content">
+     <nav class="nav-section">
+            <span class="dashboard">Mensagens</span>
+            <div class="search-box">
+                <input type="text" placeholder="Filtrar por nome..." />
+                <span class="material-icons-outlined">search</span>
+            </div>
+            <div class="profile">
+                <div class="info">
+                    <p>Olá, <b>Giulia</b></p>
+                    <small class="text-muted">Admin</small>
+                </div>
+                <div class="profile-photo">
+                    <img src="assets/img/images.png" alt="profile" />
+                </div>
+            </div>
+        </nav>
+    <div class="chat-container">
+      <aside class="user-list">
+        <h3>Usuários</h3>
+        <ul id="userList">
+         
+        </ul>
+      </aside>
+
+      <section class="chat-section">
+  <div class="chat-header" id="chatHeader">Selecione um usuário
+    <button class="close-btn" onclick="fecharChat()">×</button>
+  </div>
+
+ 
+  <div class="chat-placeholder" id="chatPlaceholder">
+  </div>
+
+  <div class="chat-messages" id="chatMessages" style="display: none;"></div>
+
+  <div class="chat-input-area">
+    <input type="text" id="chatInput" placeholder="Digite sua resposta..." />
+    <button onclick="enviarMensagem()">Enviar</button>
+  </div>
+</section>
+    </div>
+  </main>
+
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
+  import { getDatabase, ref, onValue, push, set } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAlAgHF1GQbikZIzOBRGa0QxB6mMymEdKE",
+    authDomain: "supportchat-41635.firebaseapp.com",
+    databaseURL: "https://supportchat-41635-default-rtdb.firebaseio.com",
+    projectId: "supportchat-41635",
+    storageBucket: "supportchat-41635.appspot.com",
+    messagingSenderId: "948605471154",
+    appId: "1:948605471154:web:9ef5c32e90e5c4af11bcab",
+    measurementId: "G-TMXZSNZ858"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  window.firebaseApp = app;
+  window.db = db;
+  window.ref = ref;
+  window.onValue = onValue;
+  window.push = push;
+  window.set = set;
+</script>
+  <script src="assets/JavaScript/admDashMessages.js"></script>
+  <script src="assets/JavaScript/sidebar.js"></script>
+</body>
+</html>
