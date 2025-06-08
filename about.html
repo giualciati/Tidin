@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="assets/Css/global.css" />
+  <link rel="stylesheet" href="assets/Css/about.css" />
+  <title>Sobre Nós - Tidin</title>
+</head>
+<body>
+  <div class="page-container">
+    <div id="navbar-container"></div>
+
+    <script>
+      fetch('navbar.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('navbar-container').innerHTML = data;
+    atualizarNavUsuario(); 
+  });
+    </script>
+
+    <main class="sobre-hero">
+      <div class="sobre-hero-content">
+        <h1>Sobre a Tidin</h1>
+        <p>Conectamos talentos a oportunidades. Tornamos a contratação de serviços mais simples, humana e confiável.</p>
+      </div>
+    </main>
+
+    <section class="sobre-conteudo">
+      <div class="sobre-texto">
+        <p>A Tidin nasceu com o propósito de facilitar a contratação de serviços essenciais de maneira rápida e intuitiva. Somos uma plataforma que conecta quem precisa com quem sabe fazer — com praticidade, segurança e empatia.</p>
+
+        <p>Mais do que um marketplace de serviços, promovemos inclusão digital e oportunidades reais para profissionais autônomos, permitindo que eles ampliem sua visibilidade e conquistem sua independência financeira.</p>
+      </div>
+
+      <div class="sobre-blocos">
+        <div class="bloco">
+          <h2>🎯 Missão</h2>
+          <p>Conectar pessoas e empresas a profissionais qualificados de maneira rápida, segura e acessível, promovendo a valorização do trabalho autônomo e simplificando a contratação de serviços essenciais.</p>
+        </div>
+
+        <div class="bloco">
+          <h2>👁️ Visão</h2>
+          <p>Ser referência nacional em soluções digitais para contratação de serviços, criando uma comunidade confiável e colaborativa entre clientes e prestadores.</p>
+        </div>
+
+        <div class="bloco">
+          <h2>💎 Valores</h2>
+          <ul>
+            <li><strong>Transparência:</strong> relações claras entre clientes, profissionais e a plataforma.</li>
+            <li><strong>Confiança:</strong> validação de perfis, avaliações públicas e comunicação segura.</li>
+            <li><strong>Acessibilidade:</strong> plataforma inclusiva e fácil de usar para todos os públicos.</li>
+            <li><strong>Valorização Profissional:</strong> espaço justo e digno para autônomos e pequenas empresas crescerem.</li>
+            <li><strong>Compromisso com o usuário:</strong> foco na boa experiência tanto de quem contrata quanto de quem oferece o serviço.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-container"></div>
+    <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('footer-container').innerHTML = data);
+    </script>
+  </div>
+</body>
+</html>
