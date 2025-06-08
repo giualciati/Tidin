@@ -16,9 +16,12 @@
     <div id="navbar-container"></div>
 
     <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('navbar-container').innerHTML = data);
+      fetch('navbar.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('navbar-container').innerHTML = data;
+    atualizarNavUsuario(); 
+  });
     </script>
 
     <div class="login-container">
@@ -43,7 +46,7 @@
                 </div>
 
                 <div class="forgot-password">
-                    <a href="#">Esqueci a senha</a>
+                    <a href="forgotPassword.html">Esqueci a senha</a>
                 </div>
                 <button type="button" onclick="Entrar()" id="signIn-button">Entrar</button>
             </form>

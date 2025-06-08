@@ -1,4 +1,5 @@
-const faqItems = [
+document.addEventListener("DOMContentLoaded", () => {
+  const faqItems = [
     {
       pergunta: "Quais serviços a Tidin oferece?",
       resposta: "A Tidin oferece serviços de limpeza residencial, comercial, pós-obra, organização de ambientes e passadoria, com profissionais treinados e agendamentos flexíveis.",
@@ -20,29 +21,32 @@ const faqItems = [
       resposta: "Sim. Atendemos tanto residências quanto ambientes corporativos, oferecendo planos recorrentes e personalizados para empresas.",
     }
   ];
-  
+
   const container = document.getElementById("faq-container");
-  
-  faqItems.forEach((item, index) => {
+
+  faqItems.forEach((item) => {
     const faqItem = document.createElement("div");
     faqItem.className = "faq-item";
-  
+
     const question = document.createElement("div");
     question.className = "faq-question";
     question.innerHTML = `<h3>${item.pergunta}</h3><span class="arrow">+</span>`;
-  
+
     const answer = document.createElement("div");
     answer.className = "faq-answer";
     answer.innerHTML = `<p>${item.resposta}</p>`;
-    answer.style.display = "none";
-  
+
     question.addEventListener("click", () => {
-      const isVisible = answer.style.display === "block";
-      answer.style.display = isVisible ? "none" : "block";
-      question.querySelector(".arrow").textContent = isVisible ? "+" : "−";
+      const isExpanded = answer.classList.contains("expanded");
+      answer.classList.toggle("expanded");
+
+      // Atualiza o ícone +/−
+      const arrow = question.querySelector(".arrow");
+      arrow.textContent = isExpanded ? "+" : "−";
     });
-  
+
     faqItem.appendChild(question);
     faqItem.appendChild(answer);
     container.appendChild(faqItem);
   });
+});

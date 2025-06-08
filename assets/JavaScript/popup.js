@@ -12,6 +12,6 @@ function abrirPopup() {
     } else if (tipo === "Profissional") {
       window.location.href = "signUpProfessional.html";
     } else if (tipo === "Empresa") {
-      window.location.href = "cadastro-empresa.html";
+      window.location.href = "signUpCompany.html";
     }
   }

@@ -111,3 +111,48 @@
 #signIn-button:hover{
     background-color: #73B2AC ;
 }
+
+.recuperar-container {
+      background-color: white;
+      padding: 30px;
+      margin: 170px auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .button-recuperar {
+      background-color: #83C5BE;
+      color: white;
+      border: none;
+      width: 90%;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .button-recuperar:hover {
+      background-color: #69b2a6;
+    }
+
+    .mensagem {
+      margin-top: 20px;
+      color: #2e7d32;
+      display: none;
+    }

@@ -10,13 +10,16 @@
 </head>
 <body>
     <div class="page-container">
-        <div id="navbar-container"></div>
-      
-          <script>
-            fetch('navbar.html')
-              .then(response => response.text())
-              .then(data => document.getElementById('navbar-container').innerHTML = data);
-          </script>
+            <div id="navbar-container"></div>
+
+    <script>
+      fetch('navbar.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('navbar-container').innerHTML = data;
+    atualizarNavUsuario(); 
+  });
+    </script>
     <main class="policy-container">
         <section class="policy-hero">
           <div class="policy-hero-content">
@@ -131,5 +134,6 @@
           .then(data => document.getElementById('footer-container').innerHTML = data);
       </script>
     </div>
+    <script src="assets/JavaScript/script.js"></script>
 </body>
 </html>

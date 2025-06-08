@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="assets/Css/global.css">
   <link rel="stylesheet" href="assets/Css/style.css">
+  <link rel="stylesheet" href="assets/Css/supportChat.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>Landing Page</title>
 </head>
@@ -17,8 +18,11 @@
 
     <script>
       fetch('navbar.html')
-        .then(response => response.text())
-        .then(data => document.getElementById('navbar-container').innerHTML = data);
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('navbar-container').innerHTML = data;
+    atualizarNavUsuario(); 
+  });
     </script>
 
     <main class="main-content">
@@ -32,7 +36,7 @@
             </p>
           </div>
 
-          <button class="btn-primary">Contrate agora!</button>
+          <a href="hireServicePF.html"><button class="btn-primary">Contrate agora!</button></a>
         </div>
 
         <div class="right-column">
@@ -57,7 +61,7 @@
             <div class="card-wrapper">
               <ul class="card-list swiper-wrapper">
                 <li class="card-item swiper-slide">
-                  <a href="#" class="card-link">
+                  <a href="hireServicePF.html" class="card-link">
                     <img src="assets/img/LimpezaPadrao.jpg" alt="image" class="card-image">
                     <h2 class="title">Limpeza Padrão</h2>
                     <p class="card-details">Limpeza ideal para o dia a dia da sua casa</p>
@@ -65,7 +69,7 @@
                   </a>
                 </li>
                 <li class="card-item swiper-slide">
-                  <a href="#" class="card-link">
+                  <a href="hireServicePF.html" class="card-link">
                     <img src="assets/img/limpezaPesada.avif" alt="image" class="card-image">
                     <h2 class="title">Limpeza Pesada</h2>
                     <p class="card-details">Faxina completa para deixar tudo brilhando</p>
@@ -73,7 +77,7 @@
                   </a>
                 </li>
                 <li class="card-item swiper-slide">
-                  <a href="#" class="card-link">
+                  <a href="hireServicePF.html" class="card-link">
                     <img src="assets/img/PassarRoupa.jpg" alt="image" class="card-image">
                     <h2 class="title">Passadoria</h2>
                     <p class="card-details">Roupas passadas, cuidadas e dobradas com carinho</p>
@@ -81,7 +85,7 @@
                   </a>
                 </li>
                 <li class="card-item swiper-slide">
-                  <a href="#" class="card-link">
+                  <a href="hireServicePF.html" class="card-link">
                     <img src="assets/img/montagemmoveis.jpg" alt="image" class="card-image">
                     <h2 class="title">Montagem de móveis</h2>
                     <p class="card-details">Profissionais para montar qualquer tipo de móvel</p>
@@ -89,7 +93,7 @@
                   </a>
                 </li>
                 <li class="card-item swiper-slide">
-                  <a href="#" class="card-link">
+                  <a href="hireServicePF.html" class="card-link">
                     <img src="assets/img/homem-fazendo-servico-profissional-de-limpeza-domestica.jpg" alt="image" class="card-image">
                     <h2 class="title">Limpeza de vidros</h2>
                     <p class="card-details">Janelas e espelhos limpos e sem manchas</p>
@@ -97,7 +101,7 @@
                   </a>
                 </li>
                 <li class="card-item swiper-slide">
-                  <a href="#" class="card-link">
+                  <a href="hireServicePF.html" class="card-link">
                     <img src="assets/img/limpezaEstofados.jpg" alt="image" class="card-image">
                     <h2 class="title">Limpeza de estofados</h2>
                     <p class="card-details">Sofás e poltronas renovados e higienizados</p>
@@ -105,7 +109,7 @@
                   </a>
                 </li>
                 <li class="card-item swiper-slide">
-                  <a href="#" class="card-link">
+                  <a href="hireServicePF.html" class="card-link">
                     <img src="assets/img/limpezapiscina.jpeg" alt="image" class="card-image">
                     <h2 class="title">Limpeza de Piscina</h2>
                     <p class="card-details">Piscina limpa, equilibrada e pronta para uso</p>
@@ -113,7 +117,7 @@
                   </a>
                 </li>
                 <li class="card-item swiper-slide">
-                  <a href="#" class="card-link">
+                  <a href="hireServicePF.html" class="card-link">
                     <img src="assets/img/ManutençãoCasa.jpg" alt="image" class="card-image">
                     <h2 class="title">Assistência Residencial</h2>
                     <p class="card-details">Encanador, eletricista, chaveiro, vidraceiro e mais</p>
@@ -133,7 +137,7 @@
             <div class="card-wrapper">
               <ul class="card-list swiper-wrapper">
                 <li class="card-item swiper-slide">
-                  <a href="#" class="card-link">
+                  <a href="hireServicePF.html" class="card-link">
                     <img src="assets/img/limpezaComercial.avif" alt="image" class="card-image">
                     <h2 class="title">Limpeza Comercial</h2>
                     <p class="card-details">Para escritórios, consultórios, lojas e espaços empresariais</p>
@@ -141,7 +145,7 @@
                   </a>
                 </li>
                 <li class="card-item swiper-slide">
-                  <a href="#" class="card-link">
+                  <a href="hireServicePF.html" class="card-link">
                     <img src="assets/img/montagemmoveis.jpg" alt="image" class="card-image">
                     <h2 class="title">Montagem de móveis</h2>
                     <p class="card-details">Profissionais para montar qualquer tipo de móvel</p>
@@ -149,7 +153,7 @@
                   </a>
                 </li>
                 <li class="card-item swiper-slide">
-                  <a href="#" class="card-link">
+                  <a href="hireServicePF.html" class="card-link">
                     <img src="assets/img/homem-fazendo-servico-profissional-de-limpeza-domestica.jpg" alt="image" class="card-image">
                     <h2 class="title">Limpeza de vidros</h2>
                     <p class="card-details">Janelas e espelhos limpos e sem manchas</p>
@@ -157,7 +161,7 @@
                   </a>
                 </li>
                 <li class="card-item swiper-slide">
-                  <a href="#" class="card-link">
+                  <a href="hireServicePF.html" class="card-link">
                     <img src="assets/img/limpezaEstofados.jpg" alt="image" class="card-image">
                     <h2 class="title">Limpeza de estofados</h2>
                     <p class="card-details">Sofás e poltronas renovados e higienizados</p>
@@ -165,7 +169,7 @@
                   </a>
                 </li>
                 <li class="card-item swiper-slide">
-                  <a href="#" class="card-link">
+                  <a href="hireServicePF.html" class="card-link">
                     <img src="assets/img/ManutençãoEmpresa.jpg" alt="image" class="card-image">
                     <h2 class="title">Assistência Empresarial</h2>
                     <p class="card-details">Encanador, eletricista, chaveiro, vidraceiro e mais</p>
@@ -182,7 +186,41 @@
         </div>
       </section>
     </main>
-
+    <div id="cookieModal" class="cookie-modal hidden">
+  <div class="cookie-content">
+    <p>Usamos cookies para melhorar sua experiência. Você pode aceitar ou recusar o uso. Leia nossa <a href="#">Política de Cookies</a>.</p>
+    <div class="cookie-buttons">
+      <button onclick="recusarCookies()" class="btn-recusar">Recusar</button>
+      <button onclick="aceitarCookies()" class="btn-aceitar">Aceitar</button>
+    </div>
+  </div>
+</div>
+<div id="chatWidget">
+  <div class="chat-header" id="chatHeaderToggle">
+    <span>Precisa de ajuda?</span>
+    <span id="chatToggle">−</span>
+  </div>
+  <div class="chat-body" id="chatBody">
+    <form id="formularioInicial">
+      <p>Olá! Preencha os dados para iniciar o atendimento:</p>
+      <input type="text" id="nomeUsuario" placeholder="Seu nome" required />
+      <input type="email" id="emailUsuario" placeholder="Seu e-mail" required />
+      <select id="tipoUsuario" required>
+        <option value="">Você é...</option>
+        <option value="cliente">Cliente</option>
+        <option value="prestador">Prestador</option>
+      </select>
+      <button type="submit">Iniciar o chat</button>
+    </form>
+    <div id="chatConversa" style="display:none; flex-direction: column; height: 100%;">
+      <div id="mensagensChat" style="flex-grow: 1; overflow-y: auto; margin-bottom: 10px;"></div>
+      <div class="chat-input">
+        <input type="text" id="inputMensagem" placeholder="Digite sua mensagem..." />
+        <button id="btnEnviarMensagem" type="button">➤</button>
+      </div>
+    </div>
+  </div>
+</div>
     <div id="footer-container"></div>
 
     <script>
@@ -193,6 +231,8 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="assets/JavaScript/slider.js"></script>
+  <script src="assets/JavaScript/script.js"></script>
+  <script type="module" src="assets/JavaScript/chat.js"></script>
 </body>
 
 </html>
