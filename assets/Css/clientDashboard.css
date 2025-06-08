@@ -1,0 +1,196 @@
+.nav-section-client{
+    align-items: flex-end;
+}
+
+.nav-section-client .profile{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    margin-right: 40px;
+    text-align: right;
+    justify-content: end;
+    white-space: nowrap;
+}
+
+.nav-section-client .profile-photo img{
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+}
+.nav-section-client .profile .text-muted{
+    color: #9c9898;
+}
+.home-content{
+    display: flex;
+    margin-right: 40px;
+}
+
+.recent-orders{
+    flex-basis: 65%;
+    padding: 15px;
+    height: 350px;
+}
+
+.recent-orders-card h2{
+    margin-bottom: 20px;
+}
+
+.wrapper-calendar{
+    flex-basis: 30%;
+    margin-top: 90px;
+    width: 300px;
+    height: 410px;
+    background-color: #ffffff;
+    box-shadow: 4px 8px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.calendar{
+padding: 10px;
+ 
+}
+
+.calendar ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.calendar ul li{
+    position: relative;
+    width: calc(100%/7);
+}
+.weeks{
+    font-weight: 500;
+
+}
+
+.days li{
+    z-index: 1;
+    margin-top: 20px;
+    cursor: pointer;
+
+}
+
+.calendar .days li::before{
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.days li:hover::before{
+    background: #f2f2f2;
+}
+
+.scheduled {
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.scheduled::before {
+    content: "";
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-color: #80BBB5;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.inactive{
+    color: #aaa;
+}
+
+.active{
+    color: #fff;
+}
+
+.wrapper-calendar header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 15px 20px;
+}
+
+header .current-date{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+header .icons span{
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+}
+
+header .icons span:hover{
+    background-color: #f2f2f2;
+}
+
+.active::before{
+    background: #004e89;
+}
+
+.history-table {
+    width: 100%;
+    margin: 0 auto 50px;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 4px 8px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    overflow: visible !important;
+    position: relative;
+}
+
+thead {
+    font-size: 16px;
+}
+
+thead th {
+    padding: 15px 10px;
+    text-align: center;
+}
+
+tbody td {
+    text-align: center;
+    padding: 15px 18px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 15px;
+    color: #353f43;
+}
+
+.btn-all{
+    border: none;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+    width: 100%;             
+    margin-top: -25px;        
+}
+
+.btn-all a{
+    text-decoration: none;
+    font-size: 15px;
+    color: #9c9898;
+}
+
+.btn-all a:hover{
+    text-decoration: underline;
+}
